@@ -1,0 +1,171 @@
+{
+    // first argument: 0 - silent, 1 - warning, 2 - error
+    "rules":
+    {
+        "indent": [ 0, 4 ],                 // 4 spaces, currently silent because of open brace indentation anomalies
+        "quotes": [ 2, "single" ],          // single quotes
+        "linebreak-style": [ 2, "unix" ],   // newline: only \n, without \r
+        "semi": [ 2, "always" ],            // enforce semicolons
+        "no-trailing-spaces": 2,            // disallow trailing whitespace at the end of lines
+        "space-in-parens":                  // require spaces in parens but not for empty parens.
+            [
+                2,
+                "always",
+                { "exceptions": ["empty"] }
+            ],
+        "key-spacing":                      // enforces spacing between keys and values in object literal properties
+            [
+                2,
+                {
+                    "align": "colon",       // colons have the same vertical position
+                    "beforeColon": true,    // there is at least 1 space before the colon
+                    "afterColon": true,     // there is exactly 1 space after the colon (in strict mode)
+                    "mode": "minimum"       // enforces one or more spaces before or after colons in object literals.
+                }
+            ],
+        "keyword-spacing": 2,               // space after keywords (if, switch etc.)
+        "no-undef": 2,                      // disallow use of undeclared variables unless mentioned in a /*global */ block
+        "comma-dangle": [2, "never"],       // disallow trailing commas in object literals
+        "strict": [ 2, "safe"],             // requires "use strict"; in global scope
+        "block-scoped-var": 2,              // disallow use of variables outside of the scope they were defined in
+        "camelcase":                        // require camel case names, except for properties
+        [
+            2, { "properties": "never" }
+        ],
+        "guard-for-in": 2,                  // make sure for-in loops have an if statement
+        "no-duplicate-case": 2,             // disallow repeated cases
+        "default-case": 1,                  // require default case in switch statements
+        "brace-style":                      // enforce one true brace style
+            [
+                2,
+                "allman",                   // open brace on new line
+                { "allowSingleLine": true } // start and end brace can be on the same line
+            ],
+        "no-eval": 2,                       // disallow use of eval()
+        "no-with": 2,                       // disallow use of the with statement
+        "no-continue": 1,                   // disallow use of continue
+        "no-array-constructor": 1,          // disallow use of the Array constructor
+        "no-undefined": 2,                  // disallow use of undefined variable
+        "valid-typeof": 2,                  // ensure that the results of typeof are compared against a valid string
+        "quote-props":                      // quotes around object properties
+            [
+                2,
+                "as-needed",                // only apply them when they are needed
+                {
+                    "keywords": true,       // JavaScript keywords
+                    "unnecessary": false    // quoted property keys are allowed
+                }
+            ],
+        "no-debugger": 2,                   // disallow use of debugger
+        "spaced-comment": [2, "always"],    // /* or // should be followed by a whitespace
+        "space-before-function-paren":      // function and (...) should not be separated by spaces
+            [
+                2,
+                "never"
+            ],
+        "func-call-spacing" :
+            [
+                2,
+                "never"
+            ],
+        "array-bracket-spacing":            // enforces space inside array brackets
+            [
+                2, "always"
+            ],
+        "require-jsdoc":                    // requires jsdoc comments for...
+            [
+                1,
+                {
+                    "require":
+                    {
+                        "FunctionDeclaration": true,  // functions
+                        "MethodDefinition": false,    // not for methods
+                        "ClassDeclaration": false     // not for classes
+                    }
+                }
+            ],
+        "valid-jsdoc":                      // jsdoc should be valid
+            [
+                2,
+                {
+                    "prefer":
+                    {
+                        "returns": "return"
+                    },
+                    "requireReturn": false,
+                    "requireReturnDescription": false,
+                    "requireReturnType": false,
+                    "preferType":
+                    {
+                        "string"   : "String",
+                        "object"   : "Object",
+                        "number"   : "Number",
+                        "integer"  : "Integer",
+                        "float"    : "Float",
+                        "function" : "Function",
+                        "boolean"  : "Boolean"
+                    }
+                }
+            ],
+        "computed-property-spacing":        // spaces inside prop[ key ]
+            [
+                2, "always"
+            ],
+        "no-constant-condition": 1,         // disallow use of constant expressions in conditions (e.g. if( true ))
+        "no-dupe-args": 1,                  // all arguments have to be unique in a function/method
+        "no-dupe-keys": 1,                  // disallow duplicate keys when creating object literals
+        "no-empty-character-class": 1,      // for regexs /^abc[]/;
+        "no-empty": 1,                      // disallow empty statements
+        "no-extra-semi": 1,                 // disallow unnecessary semicolons
+        "no-func-assign": 1,                // disallow overwriting functions written as function declarations
+        "no-invalid-regexp": 1,             // disallow invalid regular expression strings in the RegExp constructor
+        "no-irregular-whitespace": 1,       // disallow irregular whitespace outside of strings and comments
+        "no-sparse-arrays": 1,              // no sparse arrays [1,,2]
+        "no-unreachable": 1,                // disallow unreachable statements after a return, throw, continue, or break statement
+        "no-unused-expressions": 1,         // disallow usage of expressions in statement position
+        "no-unused-vars": 2,                // disallow unused variables
+        "no-magic-numbers": 1,              // the same number should not occur multiple times in the code without explanation
+        "no-console": 1,                    // console.{log|warn|error|...} in the code results in a warning
+        "max-len": [1, 80, 4],              // specify the maximum length of a line in your program
+        "semi-spacing":                     // enforce spacing before and after semicolons
+        [
+            2,
+            {
+                "before":false,
+                "after": true
+            }
+        ]
+    },
+    "env":
+    {
+        "es6": true,
+        "browser": true
+    },
+    "parserOptions":
+    {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "globals":
+    {
+        "define": true,
+        "module": true,
+        "_": true,
+        "describe": true,
+        "it": true,
+        "xit": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "before": true,
+        "after": true,
+        "$": true,
+        "sui": true,
+        "Backbone": true,
+        "Marionette": true,
+        "expect": true,
+        "sinon": true,
+        "mocker": true,
+        "Dropzone": true,
+        "LoginCtrl": true    // temporary
+    }
+}
